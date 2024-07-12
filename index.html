@@ -26,6 +26,57 @@
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    <!--Modulo de configuración Firebase-->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
+    
+        //Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyB_cp5PlI-yDhboaglZNsK-finPYMrKZII",
+          authDomain: "invitados-boda-sebas-val.firebaseapp.com",
+          projectId: "invitados-boda-sebas-val",
+          storageBucket: "invitados-boda-sebas-val.appspot.com",
+          messagingSenderId: "1065841526992",
+          appId: "1:1065841526992:web:cf134e5751e9ef2bfcf6d5",
+          measurementId: "G-Z5S2MQF4D3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+    
+        document.addEventListener('DOMContentLoaded', () => {
+          document.getElementById('rsvp-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+    
+            // Obtener los valores del formulario
+            const email = e.target.elements.Email.value;
+            const name = e.target.elements.Nombre.value;
+            const total = e.target.elements.Total.value;
+            const attendance = e.target.elements.Asistencia.value;
+
+            console.log(email+' - '+name+' - '+total+' - '+attendance)
+    
+            try {
+              // Crear un documento con el correo electrónico como ID
+              await setDoc(doc(db, "invitados", email), {
+                Nombre: name,
+                Acompañantes: total,
+                Asistencia: attendance
+              });
+              alert('Información enviada correctamente!');
+              location.reload();
+            } 
+            catch (error) {
+              console.error("Error al enviar la información: ", error);
+              alert('Error al enviar la información');
+            }
+          });
+        });
+    </script>
 </head>
 
 <body id="top">
@@ -198,7 +249,7 @@
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-input-group">
                                     <i class="fa fa-users"></i><input type="number" name="Total" class="" min="0"
-                                        max="4" placeholder="Esposo/esposa e hijos" required>
+                                        max="4" placeholder="Acompañantes" required>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
@@ -213,7 +264,7 @@
                         <div class="row">
                             <div class="col-md-12" id="alert-wrapper"></div>
                         </div>
-                        <button class="btn-fill rsvp-btn">
+                        <button class="btn-fill rsvp-btn" type="submit">
                             Enviar
                         </button>
                     </form>
@@ -309,7 +360,6 @@
     <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="js/vendor/ouical.js"></script>
     <script src="js/scripts.js"></script>
-
 </body>
 
 </html>
