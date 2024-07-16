@@ -55,16 +55,13 @@
                 // Obtener los valores del formulario
                 const email = e.target.elements.Email.value;
                 const name = e.target.elements.Nombre.value;
-                const total = e.target.elements.Total.value;
                 const attendance = e.target.elements.Asistencia.value;
 
-                console.log(email + ' - ' + name + ' - ' + total + ' - ' + attendance)
 
                 try {
                     // Crear un documento con el correo electrónico como ID
                     await setDoc(doc(db, "invitados", email), {
                         Nombre: name,
-                        Acompañantes: total,
                         Asistencia: attendance
                     });
                     alert('Información enviada correctamente!');
@@ -258,20 +255,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-input-group">
-                                    <i class="fa fa-users"></i><input type="number" name="Total" class="" min="0"
-                                        max="4" placeholder="Acompañantes" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-12 col-sm-12">
                                 <div style="margin-bottom:1em">
                                     <input name="Asistencia" type="radio" value="si"> Sí asistiré
                                     <br>
                                     <input name="Asistencia" type="radio" value="no"> No podré asistir
                                 </div>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="col-md-12" id="alert-wrapper"></div>
