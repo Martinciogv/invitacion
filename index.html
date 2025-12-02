@@ -1,369 +1,683 @@
-<!doctype html>
-
-<html class="no-js" lang="en">
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>¡Valeria y Sebastian se casan!</title>
-    <meta name="description" content="Queremos invitarte a nuestro gran día.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#eb5523">
-    <meta property="og:title" content="Valeria & Sebastian se casan!">
-    <meta property="og:description" content="Queremos invitarte a nuestro gran día. Porfavor confirma tu asistencia!">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Cumpleaños 18 Años - Aimee Aneliz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Contenedor de globos flotantes */
+        .balloons-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 80px;
+            height: auto;
+            bottom: -100px;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+            z-index: 0;
+            opacity: 0.9;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        
+        .balloon-string {
+            position: absolute;
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to top, #c0c0c0, transparent);
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+        
+        /* Animaciones individuales para cada globo */
+        .balloon-1 {
+            left: 5%;
+            animation: floatUp1 25s infinite;
+            animation-delay: 0s;
+        }
+        
+        .balloon-2 {
+            left: 15%;
+            animation: floatUp2 28s infinite;
+            animation-delay: 3s;
+        }
+        
+        .balloon-3 {
+            left: 25%;
+            animation: floatUp3 30s infinite;
+            animation-delay: 6s;
+        }
+        
+        .balloon-4 {
+            left: 35%;
+            animation: floatUp4 26s infinite;
+            animation-delay: 9s;
+        }
+        
+        .balloon-5 {
+            left: 55%;
+            animation: floatUp5 32s infinite;
+            animation-delay: 12s;
+        }
+        
+        .balloon-6 {
+            left: 65%;
+            animation: floatUp6 27s infinite;
+            animation-delay: 15s;
+        }
+        
+        .balloon-7 {
+            left: 75%;
+            animation: floatUp7 29s infinite;
+            animation-delay: 18s;
+        }
+        
+        .balloon-8 {
+            left: 85%;
+            animation: floatUp8 31s infinite;
+            animation-delay: 21s;
+        }
+        
+        /* Animaciones de flotación */
+        @keyframes floatUp1 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-110vh) translateX(20px) rotate(10deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp2 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-105vh) translateX(-15px) rotate(-8deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp3 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-115vh) translateX(30px) rotate(15deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp4 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-108vh) translateX(-25px) rotate(-12deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp5 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-112vh) translateX(25px) rotate(8deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp6 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-107vh) translateX(-30px) rotate(-15deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp7 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-113vh) translateX(15px) rotate(5deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp8 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-109vh) translateX(-20px) rotate(-10deg);
+                opacity: 0;
+            }
+        }
+        
+        .invitation-card {
+            width: 100%;
+            max-width: 550px;
+            background: rgba(10, 10, 42, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            border: 1px solid rgba(192, 192, 192, 0.2);
+            z-index: 1;
+            backdrop-filter: blur(5px);
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #0a0a2a 0%, #1e3a5c 100%);
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(192,192,192,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .age-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            height: 160px;
+        }
+        
+        .age-number {
+            height: 150px;
+            width: auto;
+            filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.8));
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .birthday-text {
+            font-size: 26px;
+            color: #c0c0c0;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+        
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .welcome-text {
+            font-size: 17px;
+            color: #c0c0c0;
+            margin-top: 10px;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        
+        .details {
+            padding: 35px;
+            text-align: center;
+        }
+        
+        .detail-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(192, 192, 192, 0.2);
+        }
+        
+        .detail-title {
+            font-size: 15px;
+            color: #c0c0c0;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .detail-content {
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+        
+        .date-time {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .date, .time {
+            flex: 1;
+        }
+        
+        .location {
+            margin-top: 10px;
+        }
+        
+        .special-message {
+            background: rgba(74, 144, 226, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 3px solid #4a90e2;
+        }
+        
+        .special-message p {
+            font-size: 17px;
+            color: #c0c0c0;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 16px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-map {
+            background: linear-gradient(45deg, #4a90e2, #357ae8);
+            color: white;
+            border: 2px solid #4a90e2;
+        }
+        
+        .btn-form {
+            background: linear-gradient(45deg, #c0c0c0, #a0a0a0);
+            color: #0a0a2a;
+            border: 2px solid #c0c0c0;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .icon {
+            font-size: 22px;
+        }
+        
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            font-size: 15px;
+            color: #c0c0c0;
+            border-top: 1px solid rgba(192, 192, 192, 0.1);
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer strong {
+            color: #4a90e2;
+        }
+        
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.8));
+            }
+            to {
+                filter: drop-shadow(0 0 25px rgba(74, 144, 226, 1));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .invitation-card {
+                max-width: 95%;
+            }
+            
+            .age-number {
+                height: 120px;
+            }
+            
+            .age-container {
+                height: 130px;
+            }
+            
+            .name {
+                font-size: 24px;
+            }
+            
+            .birthday-text {
+                font-size: 22px;
+            }
+            
+            .date-time {
+                flex-direction: column;
+            }
+            
+            .date, .time {
+                margin-bottom: 15px;
+            }
+            
+            .welcome-text {
+                font-size: 15px;
+            }
+            
+            .balloon {
+                width: 60px;
+            }
+            
+            .btn {
+                font-size: 16px;
+                padding: 14px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de 8 globos flotantes -->
+    <div class="balloons-container">
+        <!-- Globos usando las 3 imágenes repetidas -->
+        <img src="png/g1.png" class="balloon balloon-1" alt="Globo azul">
+        <img src="png/g2.png" class="balloon balloon-2" alt="Globo plateado">
+        <img src="png/g3.png" class="balloon balloon-3" alt="Globo negro">
+        <img src="png/g1.png" class="balloon balloon-4" alt="Globo azul">
+        <img src="png/g2.png" class="balloon balloon-5" alt="Globo plateado">
+        <img src="png/g3.png" class="balloon balloon-6" alt="Globo negro">
+        <img src="png/g1.png" class="balloon balloon-7" alt="Globo azul">
+        <img src="png/g2.png" class="balloon balloon-8" alt="Globo plateado">
+    </div>
+    
+    <!-- Tarjeta de invitación -->
+    <div class="invitation-card">
+        <div class="header">
+            <div class="age-container">
+                <img src="png/18.png" class="age-number" alt="Número 18">
+            </div>
+            <div class="birthday-text">¡Una Nueva Etapa Comienza!</div>
+            <div class="name">Aimee Aneliz Garate Grave</div>
+            <div class="welcome-text">
+                Con gran alegría te invito a ser parte de este momento especial<br>
+                donde celebramos juntos mis dieciocho primaveras
+            </div>
+        </div>
+        
+        <div class="details">
+            <div class="detail-item">
+                <div class="detail-title">Fecha Especial</div>
+                <div class="detail-content">21 de Diciembre</div>
+            </div>
+            
+            <div class="detail-item date-time">
+                <div class="date">
+                    <div class="detail-title">Hora del Evento</div>
+                    <div class="detail-content">8:00 PM</div>
+                </div>
+                <div class="time">
+                    <div class="detail-title">Lugar Elegido</div>
+                    <div class="detail-content">Salón Villa Madrigal</div>
+                </div>
+            </div>
+            
+            <div class="detail-item location">
+                <div class="detail-title">Dirección</div>
+                <div class="detail-content">Colonia Las Praderas</div>
+            </div>
+            
+            <div class="special-message">
+                <p>
+                    "Bajo el cielo de diciembre, mis sueños toman vuelo.<br>
+                    Quiero compartir contigo la magia de este momento único,<br>
+                    donde la ilusión de la niñez se encuentra con la promesa del mañana.<br>
+                    Tu presencia será la luz que ilumine esta noche inolvidable."
+                </p>
+            </div>
+            
+            <!-- Botones de acción -->
+            <div class="action-buttons">
+                <a href="https://maps.app.goo.gl/HSUBzSzFnZXz1Fvf7" target="_blank" class="btn btn-map">
+                    <span class="icon">📍</span>
+                    <span>Ver Ubicación en Google Maps</span>
+                </a>
+                
+                <a href="https://forms.gle/cX2RGaiH8MM832dx5" target="_blank" class="btn btn-form">
+                    <span class="icon">✅</span>
+                    <span>Confirmar Asistencia</span>
+                </a>
+            </div>
+            
+            <div class="detail-item">
+                <div class="detail-title">¡Tu Presencia es el Mejor Regalo!</div>
+                <div class="detail-content">Celebremos juntos este día especial</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Por favor, confirma tu asistencia antes del <strong>15 de diciembre</strong></p>
+            <p>Código de vestimenta: <strong>Elegante Nocturno</strong> (azul, plateado o negro)</p>
+            <p>Música en vivo • Barra libre • Fotografía profesional</p>
+        </div>
+    </div>
 
-    <meta property="og:type" content="website">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-    <link rel="manifest" href="manifest.json">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <link rel="stylesheet" href="css/flexslider.css">
-    <link rel="stylesheet" href="css/styles.min.css">
-    <link rel="stylesheet" href="css/queries.css">
-    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-    <!--Modulo de configuración Firebase-->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js";
-        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
-
-        //Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyB_cp5PlI-yDhboaglZNsK-finPYMrKZII",
-            authDomain: "invitados-boda-sebas-val.firebaseapp.com",
-            projectId: "invitados-boda-sebas-val",
-            storageBucket: "invitados-boda-sebas-val.appspot.com",
-            messagingSenderId: "1065841526992",
-            appId: "1:1065841526992:web:cf134e5751e9ef2bfcf6d5",
-            measurementId: "G-Z5S2MQF4D3"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const db = getFirestore(app);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('rsvp-form').addEventListener('submit', async (e) => {
-                e.preventDefault();
-
-                // Obtener los valores del formulario
-                const email = e.target.elements.Email.value;
-                const name = e.target.elements.Nombre.value;
-                const attendance = e.target.elements.Asistencia.value;
-
-
-                try {
-                    // Crear un documento con el correo electrónico como ID
-                    await setDoc(doc(db, "invitados", email), {
-                        Nombre: name,
-                        Asistencia: attendance
-                    });
-                    alert('Información enviada correctamente!');
-                    location.reload();
-                }
-                catch (error) {
-                    console.error("Error al enviar la información: ", error);
-                    alert('Error al enviar la información');
-                }
+    <script>
+        // Manejo de errores de carga de imágenes
+        document.addEventListener('DOMContentLoaded', function() {
+            const balloons = document.querySelectorAll('.balloon');
+            const ageImg = document.querySelector('.age-number');
+            
+            // Verificar cada globo
+            balloons.forEach((balloon, index) => {
+                // Si hay error de carga
+                balloon.onerror = function() {
+                    console.log('Error cargando globo ' + (index+1) + ': ' + this.src);
+                    // Crear globo alternativo CSS
+                    createFallbackBalloon(this, index);
+                };
+                
+                // Verificar después de un tiempo si no cargó
+                setTimeout(() => {
+                    if (balloon.naturalHeight === 0 && balloon.offsetParent !== null) {
+                        console.log('Globo ' + (index+1) + ' no cargó, creando alternativa');
+                        createFallbackBalloon(balloon, index);
+                    }
+                }, 3000);
             });
+            
+            // Función para crear globo alternativo
+            function createFallbackBalloon(originalBalloon, index) {
+                // Ocultar imagen original
+                originalBalloon.style.display = 'none';
+                
+                // Crear div para globo alternativo
+                const fallback = document.createElement('div');
+                fallback.className = 'balloon-fallback';
+                fallback.style.position = 'absolute';
+                fallback.style.width = '80px';
+                fallback.style.height = '100px';
+                fallback.style.borderRadius = '50%';
+                fallback.style.zIndex = '0';
+                fallback.style.opacity = '0.9';
+                fallback.style.bottom = '-100px';
+                fallback.style.left = originalBalloon.style.left;
+                fallback.style.animation = originalBalloon.style.animation;
+                fallback.style.animationDelay = originalBalloon.style.animationDelay;
+                
+                // Determinar color basado en el índice
+                let color1, color2;
+                if (index % 3 === 0) {
+                    // Azul
+                    color1 = '#4a90e2';
+                    color2 = '#1e3a5c';
+                } else if (index % 3 === 1) {
+                    // Plateado
+                    color1 = '#c0c0c0';
+                    color2 = '#808080';
+                } else {
+                    // Negro
+                    color1 = '#333333';
+                    color2 = '#000000';
+                }
+                
+                fallback.style.background = `radial-gradient(circle at 30% 30%, ${color1}, ${color2})`;
+                fallback.style.filter = 'drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4))';
+                
+                // Agregar al contenedor
+                originalBalloon.parentNode.appendChild(fallback);
+                
+                // Crear hilo
+                const string = document.createElement('div');
+                string.style.position = 'absolute';
+                string.style.width = '2px';
+                string.style.height = '60px';
+                string.style.background = 'linear-gradient(to top, #c0c0c0, transparent)';
+                string.style.top = '100%';
+                string.style.left = '50%';
+                string.style.transform = 'translateX(-50%)';
+                string.style.zIndex = '-1';
+                fallback.appendChild(string);
+            }
+            
+            // Manejar error en imagen del número 18
+            ageImg.onerror = function() {
+                console.log('Error cargando número 18');
+                const ageContainer = document.querySelector('.age-container');
+                ageContainer.innerHTML = '<div style="font-size: 120px; font-weight: bold; color: #4a90e2; text-shadow: 0 0 25px rgba(74, 144, 226, 0.8); animation: glow 2s ease-in-out infinite alternate;">18</div>';
+            };
+            
+            // Efecto interactivo para globos
+            document.addEventListener('mousemove', function(e) {
+                balloons.forEach(balloon => {
+                    const rect = balloon.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    const deltaX = e.clientX - centerX;
+                    const deltaY = e.clientY - centerY;
+                    
+                    // Si el mouse está cerca del globo
+                    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                    if (distance < 100) {
+                        // Empujar el globo en dirección opuesta
+                        const force = (100 - distance) / 100;
+                        balloon.style.transform = `translateX(${deltaX * -0.01 * force}px) translateY(${deltaY * -0.01 * force}px)`;
+                    }
+                });
+            });
+            
+            // Verificar rutas de imágenes
+            console.log('Globos configurados: 8 globos flotando desde abajo');
         });
     </script>
-</head>
-
-<body id="top">
-
-    <section class="hero">
-        <section class="navigation">
-            <header>
-                <div class="header-content">
-                    <!-- cambiar logo-->
-                    <div class="logo"><a href="#"><img src="img/CC.png" alt="Logo"></a></div>
-                    <div class="header-nav">
-                        <nav>
-                            <ul class="primary-nav">
-
-                                <li><a href="#instagram">Instagram</a></li>
-                                <li><a href="#eng-pics">Recuerdos</a></li>
-                                <li class="hidden-sm hidden-xs"><a href="#video-bg">Lugar</a></li>
-                                <li class="hidden-sm hidden-xs"><a href="muestras.html">Vestimenta</a></li>
-                            </ul>
-                            <ul class="member-actions">
-                                <li><a href="#map" class="login">Dirección</a></li>
-                                <li><a href="#rsvp" class="btn-white btn-small">Asistencia</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="navicon">
-                        <a class="nav-toggle" href="#"><span></span></a>
-                    </div>
-                </div>
-            </header>
-        </section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <div class="hero-content text-center">
-                        <!-- cabiar logo -->
-                        <img src="img/BA.png">
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 hidden-xs"></div>
-                <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp"
-                        class="btn btn-accent btn-large rsvp-btn">Responder Invitación</a></div>
-                <div class="col-sm-4 hidden-xs"></div>
-            </div>
-        </div>
-        <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
-    </section>
-
-    <section id="invitation" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h3>¡Nos casamos!</h3>
-                    <p>Nos encataría que formes parte de esta historia.
-                        <br>
-                        Reserva estos días para compartir con nosotros.
-                        <br>
-                        8 de noviembre de 2024
-                        <br>
-                        Ceremonia Religiosa
-                        <br>
-                        <strong>Ceremonia:</strong> 7:00 pm
-                        <br>
-                        <strong>CAPILLA DE LA SANTÍSIMA TRINIDAD
-                            (CORREDOR ISLA CERRALVO, EL TESO, 23232 LA VENTANA, B.C.S.)</strong>
-
-                        <br>
-                        9 de noviembre de 2024
-                        <br>
-                        La Tuna Eventos, El Sargento B.C.S.
-                        <br>
-                        <strong>Ceremonia:</strong> 4:00 pm
-                        <br>
-                        <strong>Cóctel:</strong> 5:00 pm
-                        <br>
-                        <strong>Recepción:</strong> 6:00 pm
-                    </p>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="video-bg" class="hidden-sm hidden-xs">
-        <div id="bgndVideo" class="player"
-            data-property="{videoURL:'https://youtu.be/8bUoeEvCmxE',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:30, stopAt:115, opacity:1}">
-        </div>
-        <div id="video-content">
-            <h5>El Sargento</h5>
-            <p>Entre arena y mar</p>
-        </div>
-    </section>
-
-    <section id="map" class="section-padding">
-        <div class="text-center">
-            <h3>¿Cómo llego hasta allá?</h3>
-            <p>Es más fácil de lo que crees!</p>
-        </div>
-        <div id="map-canvas">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3425764722297!2d-109.99544523981278!3d24.08944532835064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86afc355798d4465%3A0xe77098efacdb25fb!2sLa%20Tuna%20Eventos!5e0!3m2!1ses-419!2smx!4v1708400543102!5m2!1ses-419!2smx"
-                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-        <div id="map-content-wrapper" class="container pointer-events-none">
-            <div class="row">
-                <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-                    <div class="text-center">
-                        <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
-                            <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Ver Información
-                        </div>
-                    </div>
-                    <div id="map-content" class="pointer-events-auto">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h5>La tuna Eventos</h5>
-                                <p>El Sargento, B.C.S.</p>
-                            </div>
-                            <div class="col-md-6">
-                                <h5>Detalles</h5>
-                                <p>
-                                    Calle El Sargento y Corredor Isla Cerralvo
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row text-center">
-                            <div style="padding: 5px;">
-                                <a class="btn btn-accent btn-small" id="btn-show-map"><i
-                                        class="fa fa-map-marker"></i>&nbsp;&nbsp;Ver mapa
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="rsvp text-center" id="rsvp">
-
-        <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                        </button>
-                        <div class="section-padding">
-                            <h3>Gracias!</h3>
-                            <p>Estamos felices que puedas celebrar con nosotros 🎉.</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <h3>Confirma tu asistencia</h3>
-                    <p>Agradeceríamos nos pudieses indicar si podrás asistir</p>
-                    <p>antes del 28 de agosto de 2024 </p>
-                    <form id="rsvp-form" class="rsvp-form gform" action="" method="POST">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-input-group">
-                                    <i class="fa fa-envelope"></i><input type="email" name="Email" class=""
-                                        placeholder="Tu email" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-input-group">
-                                    <i class="fa fa-user"></i><input name="Nombre" class="" placeholder="Tu Nombre"
-                                        required>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <div style="margin-bottom:1em">
-                                    <input name="Asistencia" type="radio" value="si"> Sí asistiré
-                                    <br>
-                                    <input name="Asistencia" type="radio" value="no"> No podré asistir
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12" id="alert-wrapper"></div>
-                        </div>
-                        <button class="btn-fill rsvp-btn" type="submit">
-                            Enviar
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="eng-pics" class="section-padding">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h3 class="header">Que todo este en armonia</h3>
-                    <h4 class="header">Presentamos algunas opciones de colores acordes a la ocasión</h4>
-                    <h4 class="header">No blanco, beige y derivados ni rojo</h4>
-
-                    <p></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <a class="fancybox" rel="group" href="muestras.html">
-                        <div class="img-wrap">
-                            <div class="overlay">
-                                <i class="fa fa-search"></i>
-                            </div>
-                            <img src="img/Vale&Sebas/opc.png" alt="" />
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-        <div class="container">
-            <div class="row hidden-lg hidden-md hidden-xs">
-                <div class="col-xs-12 section-border section-padding"></div>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="instagram" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h3>Una foto vale más que mil palabras</h3>
-                    <p>Ayúdanos a coleccionar más recuerdos, pon en tus fotos el hashtag
-                        <!-- cambiar instagram -->
-                        <a href="https://instagram.com/explore/tags/valeysebas/" target="_blank">#ValeySebas</a>
-                    </p>
-                </div>
-            </div>
-            <div class="row section-border wp7">
-                <div class="col-md-4 col-md-offset-4">
-                    <!-- cambiar imagen de instagram -->
-                    <img src="img/Vale&Sebas/555.png">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="events section-padding" id="events">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="header">Regalos 🎁</h3>
-                    <h4 class="header">Para nosotros lo más importante es tu presencia, pero si algo nos quieres apoyar
-                        para nuestro GRAN VIAJE con dinero, lo sabremos apreciar.</h4>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center content">
-                    <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
-                    <p>Hecho por <a href="https:www.">Martín Gutierrez </a>con <span class="fa fa-heart pulse2"></span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="js/jquery.fancybox.pack.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/jquery.flexslider-min.js"></script>
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
-    <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
-    <script src="js/vendor/ouical.js"></script>
-    <script src="js/scripts.js"></script>
 </body>
-
 </html>
