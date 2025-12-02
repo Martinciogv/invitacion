@@ -2,392 +2,217 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación Cumpleaños 18 Años - Aimee Aneliz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Invitación 18 Años - Aimee Aneliz</title>
     <style>
+        /* Reset optimizado para móvil */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
         }
         
         body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
             color: #ffffff;
             min-height: 100vh;
+            min-height: -webkit-fill-available;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            overflow: hidden;
-            position: relative;
+            padding: 15px;
+            overflow-x: hidden;
+            touch-action: manipulation;
         }
         
-        /* Contenedor de globos flotantes */
-        .balloons-container {
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Contenedor principal optimizado */
+        .invitation-container {
             width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .balloon {
-            position: absolute;
-            width: 80px;
-            height: auto;
-            bottom: -100px;
-            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
-            z-index: 0;
-            opacity: 0.9;
-            animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite;
-        }
-        
-        .balloon-string {
-            position: absolute;
-            width: 2px;
-            height: 60px;
-            background: linear-gradient(to top, #c0c0c0, transparent);
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: -1;
-        }
-        
-        /* Animaciones individuales para cada globo */
-        .balloon-1 {
-            left: 5%;
-            animation: floatUp1 25s infinite;
-            animation-delay: 0s;
-        }
-        
-        .balloon-2 {
-            left: 15%;
-            animation: floatUp2 28s infinite;
-            animation-delay: 3s;
-        }
-        
-        .balloon-3 {
-            left: 25%;
-            animation: floatUp3 30s infinite;
-            animation-delay: 6s;
-        }
-        
-        .balloon-4 {
-            left: 35%;
-            animation: floatUp4 26s infinite;
-            animation-delay: 9s;
-        }
-        
-        .balloon-5 {
-            left: 55%;
-            animation: floatUp5 32s infinite;
-            animation-delay: 12s;
-        }
-        
-        .balloon-6 {
-            left: 65%;
-            animation: floatUp6 27s infinite;
-            animation-delay: 15s;
-        }
-        
-        .balloon-7 {
-            left: 75%;
-            animation: floatUp7 29s infinite;
-            animation-delay: 18s;
-        }
-        
-        .balloon-8 {
-            left: 85%;
-            animation: floatUp8 31s infinite;
-            animation-delay: 21s;
-        }
-        
-        /* Animaciones de flotación */
-        @keyframes floatUp1 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.9;
-            }
-            90% {
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(-110vh) translateX(20px) rotate(10deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp2 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.9;
-            }
-            90% {
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(-105vh) translateX(-15px) rotate(-8deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp3 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.9;
-            }
-            90% {
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(-115vh) translateX(30px) rotate(15deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp4 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.9;
-            }
-            90% {
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(-108vh) translateX(-25px) rotate(-12deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp5 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.9;
-            }
-            90% {
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(-112vh) translateX(25px) rotate(8deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp6 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.9;
-            }
-            90% {
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(-107vh) translateX(-30px) rotate(-15deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp7 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.9;
-            }
-            90% {
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(-113vh) translateX(15px) rotate(5deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp8 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.9;
-            }
-            90% {
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateY(-109vh) translateX(-20px) rotate(-10deg);
-                opacity: 0;
-            }
+            max-width: 500px;
+            position: relative;
+            z-index: 2;
         }
         
         .invitation-card {
             width: 100%;
-            max-width: 550px;
             background: rgba(10, 10, 42, 0.95);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             position: relative;
             border: 1px solid rgba(192, 192, 192, 0.2);
-            z-index: 1;
             backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
         }
         
-        .header {
-            background: linear-gradient(45deg, #0a0a2a 0%, #1e3a5c 100%);
-            padding: 30px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            min-height: 280px;
-        }
-        
-        .header::before {
-            content: "";
+        /* Contenedor de globos DENTRO de la tarjeta */
+        .balloons-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(192,192,192,0.1)"/></svg>');
-            background-size: cover;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 70px;
+            height: auto;
+            bottom: -100px;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+            z-index: 1;
+            opacity: 0.9;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        
+        /* Contenido sobre los globos */
+        .content-overlay {
+            position: relative;
+            z-index: 3;
+            background: linear-gradient(to bottom, 
+                rgba(10, 10, 42, 0.7) 0%,
+                rgba(10, 10, 42, 0.85) 20%,
+                rgba(10, 10, 42, 0.95) 100%);
+        }
+        
+        /* Header optimizado para móvil */
+        .header {
+            padding: 25px 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+            background: linear-gradient(45deg, rgba(10, 10, 42, 0.9) 0%, rgba(30, 58, 92, 0.9) 100%);
         }
         
         .age-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 15px;
-            height: 160px;
+            margin-bottom: 10px;
+            height: 120px;
         }
         
         .age-number {
-            height: 150px;
+            height: 100px;
             width: auto;
-            filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.8));
+            max-width: 90%;
+            filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.8));
             animation: glow 2s ease-in-out infinite alternate;
         }
         
         .birthday-text {
-            font-size: 26px;
+            font-size: 20px;
             color: #c0c0c0;
             margin-bottom: 5px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            font-weight: 500;
         }
         
         .name {
-            font-size: 30px;
+            font-size: 22px;
             font-weight: bold;
             color: #ffffff;
-            margin: 15px 0;
+            margin: 10px 0;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            padding: 0 10px;
         }
         
         .welcome-text {
-            font-size: 17px;
+            font-size: 14px;
             color: #c0c0c0;
-            margin-top: 10px;
+            margin-top: 8px;
             font-style: italic;
-            line-height: 1.4;
+            line-height: 1.3;
+            padding: 0 10px;
         }
         
+        /* Detalles optimizados */
         .details {
-            padding: 35px;
+            padding: 25px 15px;
             text-align: center;
         }
         
         .detail-item {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 1px solid rgba(192, 192, 192, 0.2);
+            border-bottom: 1px solid rgba(192, 192, 192, 0.15);
         }
         
         .detail-title {
-            font-size: 15px;
+            font-size: 12px;
             color: #c0c0c0;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
+            font-weight: 500;
         }
         
         .detail-content {
-            font-size: 22px;
+            font-size: 18px;
             color: #ffffff;
-            font-weight: 500;
+            font-weight: 600;
         }
         
         .date-time {
             display: flex;
             justify-content: space-between;
+            gap: 15px;
         }
         
         .date, .time {
             flex: 1;
+            min-width: 0;
         }
         
-        .location {
-            margin-top: 10px;
-        }
-        
+        /* Mensaje especial */
         .special-message {
-            background: rgba(74, 144, 226, 0.15);
-            padding: 20px;
+            background: rgba(74, 144, 226, 0.1);
+            padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
             border-left: 3px solid #4a90e2;
         }
         
         .special-message p {
-            font-size: 17px;
+            font-size: 14px;
             color: #c0c0c0;
-            line-height: 1.5;
+            line-height: 1.4;
             font-style: italic;
         }
         
+        /* Botones optimizados para touch */
         .action-buttons {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 12px;
+            margin-top: 25px;
         }
         
         .btn {
-            padding: 16px 20px;
+            padding: 14px 18px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 17px;
+            font-size: 15px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
+            min-height: 48px;
+            touch-action: manipulation;
         }
         
         .btn-map {
@@ -402,281 +227,436 @@
             border: 2px solid #c0c0c0;
         }
         
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
         .btn:active {
-            transform: translateY(-1px);
+            transform: scale(0.98);
+            opacity: 0.9;
         }
         
         .icon {
-            font-size: 22px;
+            font-size: 18px;
+            flex-shrink: 0;
         }
         
+        .btn-text {
+            flex: 1;
+            text-align: center;
+        }
+        
+        /* Footer */
         .footer {
-            padding: 20px;
+            padding: 18px 15px;
             text-align: center;
             background: rgba(0, 0, 0, 0.3);
-            font-size: 15px;
+            font-size: 13px;
             color: #c0c0c0;
             border-top: 1px solid rgba(192, 192, 192, 0.1);
+            line-height: 1.4;
         }
         
         .footer p {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .footer strong {
             color: #4a90e2;
+            font-weight: 600;
+        }
+        
+        /* Animaciones optimizadas */
+        @keyframes floatUp1 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-500px) translateX(15px) rotate(8deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp2 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-550px) translateX(-12px) rotate(-6deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp3 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-480px) translateX(20px) rotate(12deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp4 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-520px) translateX(-18px) rotate(-10deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp5 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-530px) translateX(10px) rotate(5deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp6 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-490px) translateX(-25px) rotate(-15deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp7 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-510px) translateX(8px) rotate(3deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUp8 {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-500px) translateX(-15px) rotate(-8deg);
+                opacity: 0;
+            }
         }
         
         @keyframes glow {
             from {
-                filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.8));
+                filter: drop-shadow(0 0 12px rgba(74, 144, 226, 0.7));
             }
             to {
-                filter: drop-shadow(0 0 25px rgba(74, 144, 226, 1));
+                filter: drop-shadow(0 0 20px rgba(74, 144, 226, 1));
             }
         }
         
-        @media (max-width: 480px) {
-            .invitation-card {
-                max-width: 95%;
-            }
-            
+        /* Media queries para mejor experiencia móvil */
+        @media (max-width: 380px) {
             .age-number {
-                height: 120px;
-            }
-            
-            .age-container {
-                height: 130px;
+                height: 85px;
             }
             
             .name {
-                font-size: 24px;
+                font-size: 20px;
             }
             
             .birthday-text {
-                font-size: 22px;
+                font-size: 18px;
             }
             
-            .date-time {
-                flex-direction: column;
+            .detail-content {
+                font-size: 16px;
             }
             
-            .date, .time {
-                margin-bottom: 15px;
-            }
-            
-            .welcome-text {
-                font-size: 15px;
+            .btn {
+                font-size: 14px;
+                padding: 12px 15px;
             }
             
             .balloon {
                 width: 60px;
             }
-            
-            .btn {
-                font-size: 16px;
-                padding: 14px 18px;
+        }
+        
+        @media (max-height: 700px) {
+            .header {
+                min-height: 180px;
+                padding: 20px 15px;
             }
+            
+            .age-container {
+                height: 100px;
+            }
+            
+            .age-number {
+                height: 85px;
+            }
+        }
+        
+        /* Prevenir zoom en inputs */
+        input, select, textarea {
+            font-size: 16px !important;
+        }
+        
+        /* Mejorar scrolling */
+        * {
+            -webkit-overflow-scrolling: touch;
         }
     </style>
 </head>
 <body>
-    <!-- Contenedor de 8 globos flotantes -->
-    <div class="balloons-container">
-        <!-- Globos usando las 3 imágenes repetidas -->
-        <img src="img/g1.png" class="balloon balloon-1" alt="Globo azul">
-        <img src="img/g2.png" class="balloon balloon-2" alt="Globo plateado">
-        <img src="img/g3.png" class="balloon balloon-3" alt="Globo negro">
-        <img src="img/g1.png" class="balloon balloon-4" alt="Globo azul">
-        <img src="img/g2.png" class="balloon balloon-5" alt="Globo plateado">
-        <img src="img/g3.png" class="balloon balloon-6" alt="Globo negro">
-        <img src="img/g1.png" class="balloon balloon-7" alt="Globo azul">
-        <img src="img/g2.png" class="balloon balloon-8" alt="Globo plateado">
-    </div>
-    
-    <!-- Tarjeta de invitación -->
-    <div class="invitation-card">
-        <div class="header">
-            <div class="age-container">
-                <img src="img/18.png" class="age-number" alt="Número 18">
-            </div>
-            <div class="birthday-text">¡Una Nueva Etapa Comienza!</div>
-            <div class="name">Aimee Aneliz Garate Grave</div>
-            <div class="welcome-text">
-                Con gran alegría te invito a ser parte de este momento especial<br>
-                donde celebramos juntos mis dieciocho primaveras
-            </div>
-        </div>
-        
-        <div class="details">
-            <div class="detail-item">
-                <div class="detail-title">Fecha Especial</div>
-                <div class="detail-content">21 de Diciembre</div>
+    <div class="invitation-container">
+        <div class="invitation-card">
+            <!-- Contenedor de globos DENTRO de la tarjeta -->
+            <div class="balloons-container">
+                <img src="img/g1.png" class="balloon balloon-1" alt="Globo azul">
+                <img src="img/g2.png" class="balloon balloon-2" alt="Globo plateado">
+                <img src="img/g3.png" class="balloon balloon-3" alt="Globo negro">
+                <img src="img/g1.png" class="balloon balloon-4" alt="Globo azul">
+                <img src="img/g2.png" class="balloon balloon-5" alt="Globo plateado">
+                <img src="img/g3.png" class="balloon balloon-6" alt="Globo negro">
+                <img src="img/g1.png" class="balloon balloon-7" alt="Globo azul">
+                <img src="img/g2.png" class="balloon balloon-8" alt="Globo plateado">
             </div>
             
-            <div class="detail-item date-time">
-                <div class="date">
-                    <div class="detail-title">Hora del Evento</div>
-                    <div class="detail-content">8:00 PM</div>
+            <!-- Contenido sobre los globos -->
+            <div class="content-overlay">
+                <div class="header">
+                    <div class="age-container">
+                        <img src="img/18.png" class="age-number" alt="Número 18">
+                    </div>
+                    <div class="birthday-text">¡Una Nueva Etapa Comienza!</div>
+                    <div class="name">Aimee Aneliz Garate Grave</div>
+                    <div class="welcome-text">
+                        Te invito a celebrar mis 18 años<br>
+                        en una noche mágica e inolvidable
+                    </div>
                 </div>
-                <div class="time">
-                    <div class="detail-title">Lugar Elegido</div>
-                    <div class="detail-content">Salón Villa Madrigal</div>
-                </div>
-            </div>
-            
-            <div class="detail-item location">
-                <div class="detail-title">Dirección</div>
-                <div class="detail-content">Colonia Las Praderas</div>
-            </div>
-            
-            <div class="special-message">
-                <p>
-                    "Bajo el cielo de diciembre, mis sueños toman vuelo.<br>
-                    Quiero compartir contigo la magia de este momento único,<br>
-                    donde la ilusión de la niñez se encuentra con la promesa del mañana.<br>
-                    Tu presencia será la luz que ilumine esta noche inolvidable."
-                </p>
-            </div>
-            
-            <!-- Botones de acción -->
-            <div class="action-buttons">
-                <a href="https://maps.app.goo.gl/HSUBzSzFnZXz1Fvf7" target="_blank" class="btn btn-map">
-                    <span class="icon">📍</span>
-                    <span>Ver Ubicación en Google Maps</span>
-                </a>
                 
-                <a href="https://forms.gle/cX2RGaiH8MM832dx5" target="_blank" class="btn btn-form">
-                    <span class="icon">✅</span>
-                    <span>Confirmar Asistencia</span>
-                </a>
+                <div class="details">
+                    <div class="detail-item">
+                        <div class="detail-title">Fecha Especial</div>
+                        <div class="detail-content">21 de Diciembre</div>
+                    </div>
+                    
+                    <div class="detail-item date-time">
+                        <div class="date">
+                            <div class="detail-title">Hora</div>
+                            <div class="detail-content">8:00 PM</div>
+                        </div>
+                        <div class="time">
+                            <div class="detail-title">Lugar</div>
+                            <div class="detail-content">Salón Villa Madrigal</div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item location">
+                        <div class="detail-title">Dirección</div>
+                        <div class="detail-content">Colonia Las Praderas</div>
+                    </div>
+                    
+                    <div class="special-message">
+                        <p>
+                            "Tu presencia iluminará esta noche especial<br>
+                            donde los sueños se hacen realidad"
+                        </p>
+                    </div>
+                    
+                    <!-- Botones optimizados para móvil -->
+                    <div class="action-buttons">
+                        <a href="https://maps.app.goo.gl/HSUBzSzFnZXz1Fvf7" target="_blank" class="btn btn-map">
+                            <span class="icon">📍</span>
+                            <span class="btn-text">Ver Ubicación</span>
+                        </a>
+                        
+                        <a href="https://forms.gle/cX2RGaiH8MM832dx5" target="_blank" class="btn btn-form">
+                            <span class="icon">✅</span>
+                            <span class="btn-text">Confirmar Asistencia</span>
+                        </a>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-title">¡Te Esperamos!</div>
+                        <div class="detail-content">Celebremos juntos</div>
+                    </div>
+                </div>
+                
+                <div class="footer">
+                    <p>Confirma antes del <strong>15 de diciembre</strong></p>
+                    <p><strong>Vestimenta:</strong> Elegante (azul, plateado o negro)</p>
+                    <p>Música • Barra • Fotografía</p>
+                </div>
             </div>
-            
-            <div class="detail-item">
-                <div class="detail-title">¡Tu Presencia es el Mejor Regalo!</div>
-                <div class="detail-content">Celebremos juntos este día especial</div>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>Por favor, confirma tu asistencia antes del <strong>15 de diciembre</strong></p>
-            <p>Código de vestimenta: <strong>Elegante Nocturno</strong> (azul, plateado o negro)</p>
-            <p>Música en vivo • Barra libre • Fotografía profesional</p>
         </div>
     </div>
 
     <script>
-        // Manejo de errores de carga de imágenes
+        // Código optimizado para móvil
         document.addEventListener('DOMContentLoaded', function() {
+            // Asignar animaciones a globos
             const balloons = document.querySelectorAll('.balloon');
-            const ageImg = document.querySelector('.age-number');
+            const animations = [
+                'floatUp1 25s infinite',
+                'floatUp2 28s infinite 3s',
+                'floatUp3 30s infinite 6s',
+                'floatUp4 26s infinite 9s',
+                'floatUp5 32s infinite 12s',
+                'floatUp6 27s infinite 15s',
+                'floatUp7 29s infinite 18s',
+                'floatUp8 31s infinite 21s'
+            ];
             
-            // Verificar cada globo
             balloons.forEach((balloon, index) => {
-                // Si hay error de carga
+                balloon.style.animation = animations[index];
+                
+                // Manejo de errores de carga
                 balloon.onerror = function() {
-                    console.log('Error cargando globo ' + (index+1) + ': ' + this.src);
-                    // Crear globo alternativo CSS
+                    console.log('Error cargando globo:', this.src);
+                    this.style.display = 'none';
                     createFallbackBalloon(this, index);
                 };
-                
-                // Verificar después de un tiempo si no cargó
-                setTimeout(() => {
-                    if (balloon.naturalHeight === 0 && balloon.offsetParent !== null) {
-                        console.log('Globo ' + (index+1) + ' no cargó, creando alternativa');
-                        createFallbackBalloon(balloon, index);
-                    }
-                }, 3000);
             });
             
-            // Función para crear globo alternativo
+            // Función para crear globos alternativos
             function createFallbackBalloon(originalBalloon, index) {
-                // Ocultar imagen original
-                originalBalloon.style.display = 'none';
+                const colors = [
+                    ['#4a90e2', '#1e3a5c'], // Azul
+                    ['#c0c0c0', '#808080'], // Plateado
+                    ['#333333', '#000000']  // Negro
+                ];
                 
-                // Crear div para globo alternativo
+                const colorIndex = index % 3;
                 const fallback = document.createElement('div');
                 fallback.className = 'balloon-fallback';
-                fallback.style.position = 'absolute';
-                fallback.style.width = '80px';
-                fallback.style.height = '100px';
-                fallback.style.borderRadius = '50%';
-                fallback.style.zIndex = '0';
-                fallback.style.opacity = '0.9';
-                fallback.style.bottom = '-100px';
-                fallback.style.left = originalBalloon.style.left;
-                fallback.style.animation = originalBalloon.style.animation;
-                fallback.style.animationDelay = originalBalloon.style.animationDelay;
+                fallback.style.cssText = `
+                    position: absolute;
+                    width: 70px;
+                    height: 90px;
+                    border-radius: 50%;
+                    background: radial-gradient(circle at 30% 30%, ${colors[colorIndex][0]}, ${colors[colorIndex][1]});
+                    bottom: -100px;
+                    left: ${originalBalloon.style.left || '5%'};
+                    animation: ${originalBalloon.style.animation};
+                    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+                    opacity: 0.8;
+                    z-index: 1;
+                `;
                 
-                // Determinar color basado en el índice
-                let color1, color2;
-                if (index % 3 === 0) {
-                    // Azul
-                    color1 = '#4a90e2';
-                    color2 = '#1e3a5c';
-                } else if (index % 3 === 1) {
-                    // Plateado
-                    color1 = '#c0c0c0';
-                    color2 = '#808080';
-                } else {
-                    // Negro
-                    color1 = '#333333';
-                    color2 = '#000000';
-                }
-                
-                fallback.style.background = `radial-gradient(circle at 30% 30%, ${color1}, ${color2})`;
-                fallback.style.filter = 'drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4))';
-                
-                // Agregar al contenedor
                 originalBalloon.parentNode.appendChild(fallback);
-                
-                // Crear hilo
-                const string = document.createElement('div');
-                string.style.position = 'absolute';
-                string.style.width = '2px';
-                string.style.height = '60px';
-                string.style.background = 'linear-gradient(to top, #c0c0c0, transparent)';
-                string.style.top = '100%';
-                string.style.left = '50%';
-                string.style.transform = 'translateX(-50%)';
-                string.style.zIndex = '-1';
-                fallback.appendChild(string);
             }
             
-            // Manejar error en imagen del número 18
+            // Manejar imagen del número 18
+            const ageImg = document.querySelector('.age-number');
             ageImg.onerror = function() {
                 console.log('Error cargando número 18');
                 const ageContainer = document.querySelector('.age-container');
-                ageContainer.innerHTML = '<div style="font-size: 120px; font-weight: bold; color: #4a90e2; text-shadow: 0 0 25px rgba(74, 144, 226, 0.8); animation: glow 2s ease-in-out infinite alternate;">18</div>';
+                ageContainer.innerHTML = '<div style="font-size: 80px; font-weight: bold; color: #4a90e2; text-shadow: 0 0 20px rgba(74, 144, 226, 0.8); animation: glow 2s ease-in-out infinite alternate;">18</div>';
             };
             
-            // Efecto interactivo para globos
-            document.addEventListener('mousemove', function(e) {
-                balloons.forEach(balloon => {
-                    const rect = balloon.getBoundingClientRect();
-                    const centerX = rect.left + rect.width / 2;
-                    const centerY = rect.top + rect.height / 2;
-                    
-                    const deltaX = e.clientX - centerX;
-                    const deltaY = e.clientY - centerY;
-                    
-                    // Si el mouse está cerca del globo
-                    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-                    if (distance < 100) {
-                        // Empujar el globo en dirección opuesta
-                        const force = (100 - distance) / 100;
-                        balloon.style.transform = `translateX(${deltaX * -0.01 * force}px) translateY(${deltaY * -0.01 * force}px)`;
-                    }
+            // Optimización de touch para móviles
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+            
+            // Prevenir zoom en botones
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.95)';
+                });
+                
+                btn.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
                 });
             });
             
-            // Verificar rutas de imágenes
-            console.log('Globos configurados: 8 globos flotando desde abajo');
+            // Detectar si es móvil
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+                document.body.classList.add('mobile');
+                console.log('Modo móvil activado');
+            }
+        });
+        
+        // Prevenir acciones por defecto
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Mejorar rendimiento en scroll
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    // Código de scroll optimizado
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
     </script>
 </body>
