@@ -2,217 +2,178 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Invitación 18 Años - Aimee Aneliz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Cumpleaños 18 Años - Aimee Aneliz</title>
     <style>
-        /* Reset optimizado para móvil */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-text-size-adjust: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
             color: #ffffff;
             min-height: 100vh;
-            min-height: -webkit-fill-available;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px;
-            overflow-x: hidden;
-            touch-action: manipulation;
-        }
-        
-        /* Contenedor principal optimizado */
-        .invitation-container {
-            width: 100%;
-            max-width: 500px;
-            position: relative;
-            z-index: 2;
+            padding: 20px;
         }
         
         .invitation-card {
             width: 100%;
+            max-width: 600px;
             background: rgba(10, 10, 42, 0.95);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             position: relative;
             border: 1px solid rgba(192, 192, 192, 0.2);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
         }
         
-        /* Contenedor de globos DENTRO de la tarjeta */
-        .balloons-container {
+        .header {
+            background: linear-gradient(45deg, #0a0a2a 0%, #1e3a5c 100%);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 320px;
+        }
+        
+        .header::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-            border-radius: 20px;
-        }
-        
-        .balloon {
-            position: absolute;
-            width: 70px;
-            height: auto;
-            bottom: -100px;
-            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
-            z-index: 1;
-            opacity: 0.9;
-            animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite;
-        }
-        
-        /* Contenido sobre los globos */
-        .content-overlay {
-            position: relative;
-            z-index: 3;
-            background: linear-gradient(to bottom, 
-                rgba(10, 10, 42, 0.7) 0%,
-                rgba(10, 10, 42, 0.85) 20%,
-                rgba(10, 10, 42, 0.95) 100%);
-        }
-        
-        /* Header optimizado para móvil */
-        .header {
-            padding: 25px 15px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            min-height: 200px;
-            background: linear-gradient(45deg, rgba(10, 10, 42, 0.9) 0%, rgba(30, 58, 92, 0.9) 100%);
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(192,192,192,0.1)"/></svg>');
+            background-size: cover;
         }
         
         .age-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 10px;
-            height: 120px;
+            margin-bottom: 15px;
+            height: 200px;
+            position: relative;
+            z-index: 3;
         }
         
         .age-number {
-            height: 100px;
+            height: 180px;
             width: auto;
-            max-width: 90%;
-            filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.8));
+            filter: drop-shadow(0 0 25px rgba(74, 144, 226, 0.9));
             animation: glow 2s ease-in-out infinite alternate;
         }
         
         .birthday-text {
-            font-size: 20px;
+            font-size: 28px;
             color: #c0c0c0;
             margin-bottom: 5px;
-            letter-spacing: 1px;
-            font-weight: 500;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 3;
         }
         
         .name {
-            font-size: 22px;
+            font-size: 32px;
             font-weight: bold;
             color: #ffffff;
-            margin: 10px 0;
+            margin: 15px 0;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-            padding: 0 10px;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 3;
         }
         
         .welcome-text {
-            font-size: 14px;
+            font-size: 18px;
             color: #c0c0c0;
-            margin-top: 8px;
+            margin-top: 10px;
             font-style: italic;
-            line-height: 1.3;
-            padding: 0 10px;
+            line-height: 1.4;
+            position: relative;
+            z-index: 3;
         }
         
-        /* Detalles optimizados */
         .details {
-            padding: 25px 15px;
+            padding: 40px;
             text-align: center;
+            position: relative;
+            z-index: 3;
         }
         
         .detail-item {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 1px solid rgba(192, 192, 192, 0.15);
+            border-bottom: 1px solid rgba(192, 192, 192, 0.2);
         }
         
         .detail-title {
-            font-size: 12px;
+            font-size: 16px;
             color: #c0c0c0;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
-            font-weight: 500;
+            letter-spacing: 1px;
         }
         
         .detail-content {
-            font-size: 18px;
+            font-size: 24px;
             color: #ffffff;
-            font-weight: 600;
+            font-weight: 500;
         }
         
         .date-time {
             display: flex;
             justify-content: space-between;
-            gap: 15px;
         }
         
         .date, .time {
             flex: 1;
-            min-width: 0;
         }
         
-        /* Mensaje especial */
+        .location {
+            margin-top: 10px;
+        }
+        
         .special-message {
-            background: rgba(74, 144, 226, 0.1);
-            padding: 15px;
+            background: rgba(74, 144, 226, 0.15);
+            padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
             border-left: 3px solid #4a90e2;
         }
         
         .special-message p {
-            font-size: 14px;
+            font-size: 18px;
             color: #c0c0c0;
-            line-height: 1.4;
+            line-height: 1.5;
             font-style: italic;
         }
         
-        /* Botones optimizados para touch */
         .action-buttons {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 25px;
+            gap: 15px;
+            margin-top: 30px;
         }
         
         .btn {
-            padding: 14px 18px;
+            padding: 16px 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 17px;
             text-align: center;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            min-height: 48px;
-            touch-action: manipulation;
+            gap: 10px;
         }
         
         .btn-map {
@@ -227,436 +188,458 @@
             border: 2px solid #c0c0c0;
         }
         
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
         .btn:active {
-            transform: scale(0.98);
-            opacity: 0.9;
+            transform: translateY(-1px);
         }
         
         .icon {
-            font-size: 18px;
-            flex-shrink: 0;
+            font-size: 22px;
         }
         
-        .btn-text {
-            flex: 1;
-            text-align: center;
+        /* Contenedor de globos */
+        .balloons-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
         }
         
-        /* Footer */
+        /* Globos PNG - 7 globos totales */
+        .balloon {
+            position: absolute;
+            width: 90px;
+            height: auto;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+            z-index: 2;
+            opacity: 0.9;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        
+        /* Animaciones únicas para cada globo */
+        .balloon-1 {
+            top: 20px;
+            left: 5%;
+            animation: floatBalloon1 8s ease-in-out infinite;
+        }
+        
+        .balloon-2 {
+            top: 40px;
+            right: 10%;
+            animation: floatBalloon2 9s ease-in-out infinite 1s;
+        }
+        
+        .balloon-3 {
+            top: 10px;
+            right: 5%;
+            animation: floatBalloon3 7s ease-in-out infinite 2s;
+        }
+        
+        .balloon-4 {
+            top: 60px;
+            left: 15%;
+            animation: floatBalloon4 10s ease-in-out infinite 0.5s;
+        }
+        
+        .balloon-5 {
+            top: 30px;
+            left: 25%;
+            animation: floatBalloon5 8.5s ease-in-out infinite 1.5s;
+        }
+        
+        .balloon-6 {
+            top: 50px;
+            right: 20%;
+            animation: floatBalloon6 9.5s ease-in-out infinite 2.5s;
+        }
+        
+        .balloon-7 {
+            top: 15px;
+            left: 35%;
+            animation: floatBalloon7 7.5s ease-in-out infinite 3s;
+        }
+        
+        /* Animaciones de flotación */
+        @keyframes floatBalloon1 {
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+            25% { transform: translateY(-25px) translateX(15px) rotate(5deg); }
+            50% { transform: translateY(-40px) translateX(-10px) rotate(-3deg); }
+            75% { transform: translateY(-20px) translateX(20px) rotate(2deg); }
+        }
+        
+        @keyframes floatBalloon2 {
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+            25% { transform: translateY(-30px) translateX(-15px) rotate(-4deg); }
+            50% { transform: translateY(-45px) translateX(10px) rotate(6deg); }
+            75% { transform: translateY(-25px) translateX(-20px) rotate(-2deg); }
+        }
+        
+        @keyframes floatBalloon3 {
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+            25% { transform: translateY(-20px) translateX(20px) rotate(3deg); }
+            50% { transform: translateY(-35px) translateX(-15px) rotate(-5deg); }
+            75% { transform: translateY(-15px) translateX(25px) rotate(4deg); }
+        }
+        
+        @keyframes floatBalloon4 {
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+            25% { transform: translateY(-35px) translateX(-20px) rotate(-6deg); }
+            50% { transform: translateY(-50px) translateX(15px) rotate(8deg); }
+            75% { transform: translateY(-30px) translateX(-25px) rotate(-4deg); }
+        }
+        
+        @keyframes floatBalloon5 {
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+            25% { transform: translateY(-25px) translateX(25px) rotate(7deg); }
+            50% { transform: translateY(-40px) translateX(-20px) rotate(-8deg); }
+            75% { transform: translateY(-20px) translateX(30px) rotate(5deg); }
+        }
+        
+        @keyframes floatBalloon6 {
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+            25% { transform: translateY(-30px) translateX(-25px) rotate(-7deg); }
+            50% { transform: translateY(-45px) translateX(20px) rotate(9deg); }
+            75% { transform: translateY(-25px) translateX(-30px) rotate(-5deg); }
+        }
+        
+        @keyframes floatBalloon7 {
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
+            25% { transform: translateY(-20px) translateX(30px) rotate(6deg); }
+            50% { transform: translateY(-35px) translateX(-25px) rotate(-9deg); }
+            75% { transform: translateY(-15px) translateX(35px) rotate(7deg); }
+        }
+        
+        /* Globos alternativos en caso de error */
+        .balloon-fallback {
+            position: absolute;
+            width: 90px;
+            height: 110px;
+            border-radius: 50%;
+            z-index: 2;
+            opacity: 0.9;
+            display: none;
+        }
+        
+        .balloon-fallback-1 {
+            background: radial-gradient(circle at 30% 30%, #4a90e2, #1e3a5c);
+            top: 20px;
+            left: 5%;
+            animation: floatBalloon1 8s ease-in-out infinite;
+        }
+        
+        .balloon-fallback-2 {
+            background: radial-gradient(circle at 30% 30%, #c0c0c0, #808080);
+            top: 40px;
+            right: 10%;
+            animation: floatBalloon2 9s ease-in-out infinite 1s;
+        }
+        
+        .balloon-fallback-3 {
+            background: radial-gradient(circle at 30% 30%, #333333, #000000);
+            top: 10px;
+            right: 5%;
+            animation: floatBalloon3 7s ease-in-out infinite 2s;
+        }
+        
+        .balloon-fallback-4 {
+            background: radial-gradient(circle at 30% 30%, #4a90e2, #1e3a5c);
+            top: 60px;
+            left: 15%;
+            animation: floatBalloon4 10s ease-in-out infinite 0.5s;
+        }
+        
+        .balloon-fallback-5 {
+            background: radial-gradient(circle at 30% 30%, #c0c0c0, #808080);
+            top: 30px;
+            left: 25%;
+            animation: floatBalloon5 8.5s ease-in-out infinite 1.5s;
+        }
+        
+        .balloon-fallback-6 {
+            background: radial-gradient(circle at 30% 30%, #333333, #000000);
+            top: 50px;
+            right: 20%;
+            animation: floatBalloon6 9.5s ease-in-out infinite 2.5s;
+        }
+        
+        .balloon-fallback-7 {
+            background: radial-gradient(circle at 30% 30%, #4a90e2, #1e3a5c);
+            top: 15px;
+            left: 35%;
+            animation: floatBalloon7 7.5s ease-in-out infinite 3s;
+        }
+        
         .footer {
-            padding: 18px 15px;
+            padding: 20px;
             text-align: center;
             background: rgba(0, 0, 0, 0.3);
-            font-size: 13px;
+            font-size: 15px;
             color: #c0c0c0;
             border-top: 1px solid rgba(192, 192, 192, 0.1);
-            line-height: 1.4;
+            position: relative;
+            z-index: 3;
         }
         
         .footer p {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .footer strong {
             color: #4a90e2;
-            font-weight: 600;
-        }
-        
-        /* Animaciones optimizadas */
-        @keyframes floatUp1 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-500px) translateX(15px) rotate(8deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp2 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-550px) translateX(-12px) rotate(-6deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp3 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-480px) translateX(20px) rotate(12deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp4 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-520px) translateX(-18px) rotate(-10deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp5 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-530px) translateX(10px) rotate(5deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp6 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-490px) translateX(-25px) rotate(-15deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp7 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-510px) translateX(8px) rotate(3deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes floatUp8 {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-500px) translateX(-15px) rotate(-8deg);
-                opacity: 0;
-            }
         }
         
         @keyframes glow {
             from {
-                filter: drop-shadow(0 0 12px rgba(74, 144, 226, 0.7));
+                filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.8));
             }
             to {
-                filter: drop-shadow(0 0 20px rgba(74, 144, 226, 1));
+                filter: drop-shadow(0 0 30px rgba(74, 144, 226, 1));
             }
         }
         
-        /* Media queries para mejor experiencia móvil */
-        @media (max-width: 380px) {
-            .age-number {
-                height: 85px;
+        @media (max-width: 480px) {
+            .invitation-card {
+                max-width: 95%;
             }
             
-            .name {
-                font-size: 20px;
-            }
-            
-            .birthday-text {
-                font-size: 18px;
-            }
-            
-            .detail-content {
-                font-size: 16px;
-            }
-            
-            .btn {
-                font-size: 14px;
-                padding: 12px 15px;
-            }
-            
-            .balloon {
-                width: 60px;
-            }
-        }
-        
-        @media (max-height: 700px) {
             .header {
-                min-height: 180px;
-                padding: 20px 15px;
+                padding: 30px 15px;
+                min-height: 280px;
+            }
+            
+            .age-number {
+                height: 140px;
             }
             
             .age-container {
-                height: 100px;
+                height: 150px;
             }
             
-            .age-number {
+            .name {
+                font-size: 26px;
+            }
+            
+            .birthday-text {
+                font-size: 22px;
+            }
+            
+            .details {
+                padding: 25px;
+            }
+            
+            .date-time {
+                flex-direction: column;
+            }
+            
+            .date, .time {
+                margin-bottom: 15px;
+            }
+            
+            .welcome-text {
+                font-size: 16px;
+            }
+            
+            .balloon {
+                width: 70px;
+            }
+            
+            .balloon-fallback {
+                width: 70px;
                 height: 85px;
             }
-        }
-        
-        /* Prevenir zoom en inputs */
-        input, select, textarea {
-            font-size: 16px !important;
-        }
-        
-        /* Mejorar scrolling */
-        * {
-            -webkit-overflow-scrolling: touch;
+            
+            .btn {
+                font-size: 16px;
+                padding: 14px 18px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="invitation-container">
-        <div class="invitation-card">
-            <!-- Contenedor de globos DENTRO de la tarjeta -->
-            <div class="balloons-container">
-                <img src="img/g1.png" class="balloon balloon-1" alt="Globo azul">
-                <img src="img/g2.png" class="balloon balloon-2" alt="Globo plateado">
-                <img src="img/g3.png" class="balloon balloon-3" alt="Globo negro">
-                <img src="img/g1.png" class="balloon balloon-4" alt="Globo azul">
-                <img src="img/g2.png" class="balloon balloon-5" alt="Globo plateado">
-                <img src="img/g3.png" class="balloon balloon-6" alt="Globo negro">
-                <img src="img/g1.png" class="balloon balloon-7" alt="Globo azul">
-                <img src="img/g2.png" class="balloon balloon-8" alt="Globo plateado">
-            </div>
+    <div class="invitation-card">
+        <!-- Contenedor de 7 globos flotantes -->
+        <div class="balloons-container">
+            <!-- Globos PNG con alternativas -->
+            <img src="png/g1.png" class="balloon balloon-1" alt="Globo azul">
+            <div class="balloon-fallback balloon-fallback-1"></div>
             
-            <!-- Contenido sobre los globos -->
-            <div class="content-overlay">
-                <div class="header">
-                    <div class="age-container">
-                        <img src="img/18.png" class="age-number" alt="Número 18">
-                    </div>
-                    <div class="birthday-text">¡Una Nueva Etapa Comienza!</div>
-                    <div class="name">Aimee Aneliz Garate Grave</div>
-                    <div class="welcome-text">
-                        Te invito a celebrar mis 18 años<br>
-                        en una noche mágica e inolvidable
-                    </div>
-                </div>
-                
-                <div class="details">
-                    <div class="detail-item">
-                        <div class="detail-title">Fecha Especial</div>
-                        <div class="detail-content">21 de Diciembre</div>
-                    </div>
-                    
-                    <div class="detail-item date-time">
-                        <div class="date">
-                            <div class="detail-title">Hora</div>
-                            <div class="detail-content">8:00 PM</div>
-                        </div>
-                        <div class="time">
-                            <div class="detail-title">Lugar</div>
-                            <div class="detail-content">Salón Villa Madrigal</div>
-                        </div>
-                    </div>
-                    
-                    <div class="detail-item location">
-                        <div class="detail-title">Dirección</div>
-                        <div class="detail-content">Colonia Las Praderas</div>
-                    </div>
-                    
-                    <div class="special-message">
-                        <p>
-                            "Tu presencia iluminará esta noche especial<br>
-                            donde los sueños se hacen realidad"
-                        </p>
-                    </div>
-                    
-                    <!-- Botones optimizados para móvil -->
-                    <div class="action-buttons">
-                        <a href="https://maps.app.goo.gl/HSUBzSzFnZXz1Fvf7" target="_blank" class="btn btn-map">
-                            <span class="icon">📍</span>
-                            <span class="btn-text">Ver Ubicación</span>
-                        </a>
-                        
-                        <a href="https://forms.gle/cX2RGaiH8MM832dx5" target="_blank" class="btn btn-form">
-                            <span class="icon">✅</span>
-                            <span class="btn-text">Confirmar Asistencia</span>
-                        </a>
-                    </div>
-                    
-                    <div class="detail-item">
-                        <div class="detail-title">¡Te Esperamos!</div>
-                        <div class="detail-content">Celebremos juntos</div>
-                    </div>
-                </div>
-                
-                <div class="footer">
-                    <p>Confirma antes del <strong>15 de diciembre</strong></p>
-                    <p><strong>Vestimenta:</strong> Elegante (azul, plateado o negro)</p>
-                    <p>Música • Barra • Fotografía</p>
-                </div>
+            <img src="png/g3.png" class="balloon balloon-2" alt="Globo plateado">
+            <div class="balloon-fallback balloon-fallback-2"></div>
+            
+            <img src="png/g3.png" class="balloon balloon-3" alt="Globo negro">
+            <div class="balloon-fallback balloon-fallback-3"></div>
+            
+            <img src="png/g1.png" class="balloon balloon-4" alt="Globo azul">
+            <div class="balloon-fallback balloon-fallback-4"></div>
+            
+            <img src="png/g3.png" class="balloon balloon-5" alt="Globo plateado">
+            <div class="balloon-fallback balloon-fallback-5"></div>
+            
+            <img src="png/g2.png" class="balloon balloon-6" alt="Globo negro">
+            <div class="balloon-fallback balloon-fallback-6"></div>
+            
+            <img src="png/g1.png" class="balloon balloon-7" alt="Globo azul">
+            <div class="balloon-fallback balloon-fallback-7"></div>
+        </div>
+        
+        <div class="header">
+            <div class="age-container">
+                <img src="png/18.png" class="age-number" alt="Número 18">
+            </div>
+            <div class="birthday-text">¡Una Nueva Etapa Comienza!</div>
+            <div class="name">Aimee Aneliz</div>
+            <div class="welcome-text">
+                Con gran alegría te invito a ser parte de este momento especial<br>
+                donde celebramos juntos mis dieciocho primaveras
             </div>
         </div>
+        
+        <div class="details">
+            <div class="detail-item">
+                <div class="detail-title">Fecha Especial</div>
+                <div class="detail-content">21 de Diciembre</div>
+            </div>
+            
+            <div class="detail-item date-time">
+                <div class="date">
+                    <div class="detail-title">Hora del Evento</div>
+                    <div class="detail-content">8:00 PM</div>
+                </div>
+                <div class="time">
+                    <div class="detail-title">Lugar Elegido</div>
+                    <div class="detail-content">Salón Villa Madrigal</div>
+                </div>
+            </div>
+            
+            <div class="detail-item location">
+                <div class="detail-title">Dirección</div>
+                <div class="detail-content">Colonia Las Praderas</div>
+            </div>
+            
+            <div class="special-message">
+                <p>
+                    "Bajo el cielo de diciembre, mis sueños toman vuelo.<br>
+                    Quiero compartir contigo la magia de este momento único,<br>
+                    donde la ilusión de la niñez se encuentra con la promesa del mañana.<br>
+                    Tu presencia será la luz que ilumine esta noche inolvidable."
+                </p>
+            </div>
+            
+            <!-- Botones de acción -->
+            <div class="action-buttons">
+                <a href="https://maps.app.goo.gl/HSUBzSzFnZXz1Fvf7" target="_blank" class="btn btn-map">
+                    <span class="icon">📍</span>
+                    <span>Ver Ubicación en Google Maps</span>
+                </a>
+                
+                <a href="https://forms.gle/cX2RGaiH8MM832dx5" target="_blank" class="btn btn-form">
+                    <span class="icon">✅</span>
+                    <span>Confirmar Asistencia</span>
+                </a>
+            </div>
+            
+            <div class="detail-item">
+                <div class="detail-title">¡Tu Presencia es el Mejor Regalo!</div>
+                <div class="detail-content">Celebremos juntos este día especial</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Por favor, confirma tu asistencia antes del <strong>15 de diciembre</strong></p>
+                </div>
     </div>
 
     <script>
-        // Código optimizado para móvil
+        // Manejo de errores de carga de imágenes
         document.addEventListener('DOMContentLoaded', function() {
-            // Asignar animaciones a globos
-            const balloons = document.querySelectorAll('.balloon');
-            const animations = [
-                'floatUp1 25s infinite',
-                'floatUp2 28s infinite 3s',
-                'floatUp3 30s infinite 6s',
-                'floatUp4 26s infinite 9s',
-                'floatUp5 32s infinite 12s',
-                'floatUp6 27s infinite 15s',
-                'floatUp7 29s infinite 18s',
-                'floatUp8 31s infinite 21s'
-            ];
+            console.log('=== CARGANDO INVITACIÓN ===');
             
+            const balloons = document.querySelectorAll('.balloon');
+            const fallbacks = document.querySelectorAll('.balloon-fallback');
+            const ageImg = document.querySelector('.age-number');
+            
+            // Verificar cada globo
             balloons.forEach((balloon, index) => {
-                balloon.style.animation = animations[index];
+                // Verificar si la imagen se cargó
+                if (balloon.complete) {
+                    if (balloon.naturalHeight === 0) {
+                        // Imagen no cargada
+                        balloon.style.display = 'none';
+                        if (fallbacks[index]) {
+                            fallbacks[index].style.display = 'block';
+                        }
+                        console.log(`Globo ${index + 1} no cargado, mostrando alternativa`);
+                    } else {
+                        console.log(`Globo ${index + 1} cargado correctamente`);
+                    }
+                } else {
+                    // Si hay error de carga
+                    balloon.onerror = function() {
+                        console.log(`Error cargando globo ${index + 1}: ${this.src}`);
+                        balloon.style.display = 'none';
+                        if (fallbacks[index]) {
+                            fallbacks[index].style.display = 'block';
+                        }
+                    };
+                    
+                    // También verificar después de un tiempo
+                    setTimeout(() => {
+                        if (balloon.naturalHeight === 0 && balloon.style.display !== 'none') {
+                            balloon.style.display = 'none';
+                            if (fallbacks[index]) {
+                                fallbacks[index].style.display = 'block';
+                            }
+                        }
+                    }, 3000);
+                }
                 
-                // Manejo de errores de carga
-                balloon.onerror = function() {
-                    console.log('Error cargando globo:', this.src);
-                    this.style.display = 'none';
-                    createFallbackBalloon(this, index);
-                };
+                // Efecto interactivo para globos
+                balloon.addEventListener('mouseover', function() {
+                    this.style.transform += ' scale(1.1)';
+                });
+                
+                balloon.addEventListener('mouseout', function() {
+                    this.style.transform = this.style.transform.replace(' scale(1.1)', '');
+                });
             });
             
-            // Función para crear globos alternativos
-            function createFallbackBalloon(originalBalloon, index) {
-                const colors = [
-                    ['#4a90e2', '#1e3a5c'], // Azul
-                    ['#c0c0c0', '#808080'], // Plateado
-                    ['#333333', '#000000']  // Negro
-                ];
-                
-                const colorIndex = index % 3;
-                const fallback = document.createElement('div');
-                fallback.className = 'balloon-fallback';
-                fallback.style.cssText = `
-                    position: absolute;
-                    width: 70px;
-                    height: 90px;
-                    border-radius: 50%;
-                    background: radial-gradient(circle at 30% 30%, ${colors[colorIndex][0]}, ${colors[colorIndex][1]});
-                    bottom: -100px;
-                    left: ${originalBalloon.style.left || '5%'};
-                    animation: ${originalBalloon.style.animation};
-                    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
-                    opacity: 0.8;
-                    z-index: 1;
-                `;
-                
-                originalBalloon.parentNode.appendChild(fallback);
-            }
-            
-            // Manejar imagen del número 18
-            const ageImg = document.querySelector('.age-number');
+            // Manejar error en imagen del número 18
             ageImg.onerror = function() {
                 console.log('Error cargando número 18');
                 const ageContainer = document.querySelector('.age-container');
-                ageContainer.innerHTML = '<div style="font-size: 80px; font-weight: bold; color: #4a90e2; text-shadow: 0 0 20px rgba(74, 144, 226, 0.8); animation: glow 2s ease-in-out infinite alternate;">18</div>';
+                ageContainer.innerHTML = '<div style="font-size: 150px; font-weight: bold; color: #4a90e2; text-shadow: 0 0 30px rgba(74, 144, 226, 0.8); animation: glow 2s ease-in-out infinite alternate;">18</div>';
             };
             
-            // Optimización de touch para móviles
-            let lastTouchEnd = 0;
-            document.addEventListener('touchend', function(event) {
-                const now = Date.now();
-                if (now - lastTouchEnd <= 300) {
-                    event.preventDefault();
-                }
-                lastTouchEnd = now;
-            }, false);
+            ageImg.onload = function() {
+                console.log('Imagen 18 cargada correctamente');
+                console.log('Dimensiones:', this.naturalWidth, 'x', this.naturalHeight);
+            };
             
-            // Prevenir zoom en botones
-            document.querySelectorAll('.btn').forEach(btn => {
-                btn.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.95)';
+            // Verificar rutas de imágenes
+            console.log('Rutas configuradas:');
+            console.log('- Carpeta de imágenes: img/');
+            console.log('- Globos: g1.png, g2.png, g3.png');
+            console.log('- Número: 18.png');
+            
+            // Efectos interactivos para globos alternativos
+            fallbacks.forEach(fallback => {
+                fallback.addEventListener('mouseover', function() {
+                    this.style.transform += ' scale(1.1)';
                 });
                 
-                btn.addEventListener('touchend', function() {
-                    this.style.transform = 'scale(1)';
+                fallback.addEventListener('mouseout', function() {
+                    this.style.transform = this.style.transform.replace(' scale(1.1)', '');
                 });
             });
-            
-            // Detectar si es móvil
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            if (isMobile) {
-                document.body.classList.add('mobile');
-                console.log('Modo móvil activado');
-            }
-        });
-        
-        // Prevenir acciones por defecto
-        document.addEventListener('touchstart', function(e) {
-            if (e.touches.length > 1) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-        
-        // Mejorar rendimiento en scroll
-        let ticking = false;
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                window.requestAnimationFrame(function() {
-                    // Código de scroll optimizado
-                    ticking = false;
-                });
-                ticking = true;
-            }
         });
     </script>
 </body>
